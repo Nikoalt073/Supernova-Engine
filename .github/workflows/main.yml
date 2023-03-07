@@ -31,9 +31,6 @@ jobs:
           haxelib setup C:/haxelib
           haxelib install hxcpp > /dev/null --quiet
           haxe -cp update -D analyzer-optimize -main Update --interp
-          haxelib git faxe https://github.com/uhrobots/faxe
-          haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit.git
-          haxelib git hxvm-luajit https://github.com/nebulazorua/hxvm-luajit
           haxelib run lime setup flixel
           haxelib run lime setup
         shell: cmd
