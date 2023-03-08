@@ -11,6 +11,7 @@ import funkin.ui.MenuTypedList;
 import funkin.ui.AtlasMenuItem;
 import funkin.config.OptionsState;
 import funkin.config.Options;
+import flixel.input.gamepad.FlxGamepad;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
@@ -72,11 +73,11 @@ class MainMenu extends MusicBeatState {
 		super.update(elapsed);
 		if (FlxG.sound.music.volume < 0.8)
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
-		if (FlxG.keys.justPressed.DOWN)
+		if (FlxG.keys.justPressed.DOWN || FlxG.gamepads.lastActive.justPressed.DOWN)
 			changeOption(1);
-		if (FlxG.keys.justPressed.UP)
+		if (FlxG.keys.justPressed.UP || FlxG.gamepads.lastActive.justPressed.UP)
 			changeOption(-1);
-		if (FlxG.keys.justPressed.ENTER)
+		if (FlxG.keys.justPressed.ENTER || FlxG.gamepads.lastActive.justPressed.A)
 			selectItem();
 	}
 
